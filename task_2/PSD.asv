@@ -9,8 +9,8 @@ x = psi_w(2,:)*pi/180;  % psi_w(2,:) has unit
 window = 4096;
 fs = 10;
 
-[pxx,f] = pwelch(x,window,[],[],fs);
-Pxx = pxx./(2*pi);
+[pxx,f] = pwelch(x,window,[],[],fs*2*pi);
+Pxx = pxx; %./(2*pi);
 w = 2*pi*f;
 
 plot (w, Pxx);
